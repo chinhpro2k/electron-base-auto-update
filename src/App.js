@@ -6,17 +6,19 @@ import Redirect from "./Components/Router";
 
 function App() {
   return (
-    <div className="App">
-      <div style={{ display: "flex",height:"100%" }}>
-        <div style={{ marginRight: "16px", backgroundColor: "#001529" }}>
-          <LeftBar />
-        </div>
+    <HashRouter>
+      <div className="App">
+        <div style={{ display: "flex", height: "100%" }}>
+          <div style={{ marginRight: "16px", backgroundColor: "#001529" }}>
+            <LeftBar />
+          </div>
 
-        <HashRouter>
-          <Redirect />
-        </HashRouter>
+         <div style={{minHeight:"100vh"}}>
+           <Redirect />
+         </div>
+        </div>
       </div>
-    </div>
+    </HashRouter>
   );
 }
 
