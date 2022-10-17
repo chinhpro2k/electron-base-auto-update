@@ -1,8 +1,8 @@
 const path = require("path");
-const {app, dialog, BrowserWindow} = require("electron");
+require('../src/Control/MessageControl/main');
+const {app, dialog, BrowserWindow,ipcMain} = require("electron");
 const {autoUpdater} = require("electron-updater");
 const isDev = require("electron-is-dev");
-
  function createSplashWindow() {
     const splash = new BrowserWindow({
         width: 500,
@@ -29,7 +29,6 @@ const createWindow = () => {
         height: 800,
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true
         },
     });
 
@@ -109,4 +108,3 @@ autoUpdater.on("update-downloaded", (_event, releaseNotes, releaseName) => {
         if (returnValue.response === 0) autoUpdater.quitAndInstall()
     })
 });
-
